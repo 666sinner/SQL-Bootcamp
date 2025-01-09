@@ -1,0 +1,9 @@
+
+SELECT person.name AS name
+FROM person
+JOIN person_order ON person_order.id = person.id
+JOIN menu ON menu.id = person_order.menu_id 
+WHERE person.gender = 'male'
+  AND (person.address IN ('Moscow', 'Samara'))
+  AND (menu.pizza_name IN ('pepperoni pizza', 'mushroom pizza'))
+ORDER BY person.name DESC;
